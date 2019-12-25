@@ -28,7 +28,7 @@ class Queue{
   }
   dequeue(){
     if(!this.first) return this;
-    if(this.length===0){
+    if(this.length===0 || this.first === this.last){
       this.first = this.last = null;
     }else{
       this.first = this.first.next;
@@ -44,5 +44,9 @@ myQueue.enqueue('A');
 myQueue.enqueue('B');
 myQueue.enqueue('C');
 myQueue.enqueue('D');
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
 myQueue.dequeue();
 // myQueue.peek();
